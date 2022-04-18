@@ -16,17 +16,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cpf')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'cpf')->textInput(['maxlength' => true])->widget(\yii\widgets\MaskedInput::class, [
+        'mask' => '999.999.999-99',
+    ]) ?>
 
     <?= $form->field($model, 'logradouro')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cep')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'cep')->textInput(['maxlength' => true])->widget(\yii\widgets\MaskedInput::class, [
+    'mask' => '99999-999',
+]) ?>
 
     <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'estado')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'numero')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'numero')->textInput(['type'=>'number','maxlength' => true]) ?>
 
     <?= $form->field($model, 'complemento')->textInput(['maxlength' => true]) ?>
 
