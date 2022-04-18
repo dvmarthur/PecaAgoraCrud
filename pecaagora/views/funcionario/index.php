@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'complemento',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Funcionario $model, $key, $index, $column) {
+                'urlCreator' => function ($action, \app\models\Funcionario $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],

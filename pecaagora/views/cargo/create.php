@@ -8,6 +8,7 @@ use yii\helpers\Html;
 $this->title = 'Create Cargo';
 $this->params['breadcrumbs'][] = ['label' => 'Cargos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="cargo-create">
 

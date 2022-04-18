@@ -69,6 +69,13 @@ class FuncionarioController extends Controller
     {
         $model = new Funcionario();
 
+        $cargos = \app\models\Cargo::find()->all();
+        $cargos = \yii\helpers\ArrayHelper::map($cargos, 'id', 'name');
+
+
+
+
+
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -79,6 +86,7 @@ class FuncionarioController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'cargos' => $cargos,
         ]);
     }
 
